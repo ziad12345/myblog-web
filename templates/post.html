@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% include "header.html" %}
+    <body>
+        <!-- Navigation-->
+
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url({{ url_for('static', filename='img/home-bg.jpg') }})">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+        <!-- Post Content-->
+                        {% for post in all_posts %}
+                        {% if post.id == num: %}
+                        <div class="post-preview">
+                            <h1 class="post-title">
+                              {{post.title}}
+                            </h1>
+                            <h2 class="post-subtitle">
+                              {{post.subtitle}}
+                            </h2>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                              <h4 class="post-body">{{post.body}}</h4>
+                          <p class="post-meta">Posted by
+                            on {{post.date}}</p>
+                        </div>
+                        <hr>
+                        {% endif %}
+                        {% endfor %}
+        <!-- Footer-->
+                {% include "footer.html" %}
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
